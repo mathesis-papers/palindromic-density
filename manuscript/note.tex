@@ -1,0 +1,397 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\DeclareMathOperator*{\limsupop}{lim\,sup}
+\title{Sharp upper-limsup density in Freeman's conjecture\\
+and an extension of the de Luca--Fischler Fibonacci formula}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 16, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For Freeman's Conjecture~7.1 (arXiv:1604.06755v2, 25 January 2017,
+p.~10; density in \S6, p.~8), we prove the sharp upper-limsup replacement
+bound $1$ and extend the Fibonacci-prefix formula of de Luca, as recalled
+by Fischler (2006, \S1), to
+establish the separate Fibonacci equality for all positive integers $m,r,s$
+with $r\ne s$.
+The density-one examples have bounded partial quotients and are not
+eventually periodic: increasing powers of whole prefixes force local length
+ratios to approach one. A block-code identity gives all qualifying Fibonacci
+prefixes, including the cases with a terminal digit $1$ and with $m=1$.
+The upper-limsup density differs from the classical lower-liminf density.
+\end{abstract}
+
+\section{The density and the sharp replacement bound}
+For a nonempty word $w=(a_0,\ldots,a_{n-1})$ of positive integers, put
+$[w]=a_0+1/(a_1+\cdots+1/a_{n-1})$, with the usual nested interpretation,
+and write $\widetilde w=(a_{n-1},\ldots,a_0)$. The word is
+\emph{$m$-palindromic} if $[w]=m[\widetilde w]$.
+An infinite positive sequence $A=(a_n)_{n\geq0}$ is $m$-palindromic if
+infinitely many of its nonempty prefixes have this property. Write
+$n_0<n_1<\cdots$ for \emph{all} their positive lengths. Freeman's definition
+\cite[\S6, p.~8]{Freeman} is
+\begin{equation}\label{eq:density}
+ d_m([A])=\limsup_{i\to\infty}\frac{n_i}{n_{i+1}}.
+\end{equation}
+The lengths, not the final indices of the prefixes, occur in this formula.
+Let $\varphi=(1+\sqrt5)/2$. Conjecture~7.1 asserts that
+$d_m([A])\leq\varphi^{-1}$ whenever $A$ is not eventually periodic, and
+then gives a separate equality assertion for substituted Fibonacci words.
+
+Freeman's matrix criterion and sandwich construction
+\cite[Lemmas~3.1--3.2, 3.6 and 3.9]{Freeman} already provide the
+algebraic ingredients below. His \S7 proves a Fibonacci lower bound; the
+matching equality follows here by identifying \emph{all} qualifying prefixes.
+For the counterexamples, the change is to insert an increasing number of
+copies of the \emph{whole preceding prefix}, creating clusters whose local
+length ratios approach one.
+
+\begin{theorem}\label{thm:main}
+For all integers $m,r,s\geq1$ with $r\ne s$, there is a positive,
+non-eventually-periodic $m$-palindromic sequence $A^{(m;r,s)}$ with digits in
+$\{mr,r,ms,s\}$ such that
+\[
+ d_m([A^{(m;r,s)}])=1.
+\]
+Consequently, the maximum upper-limsup density among such sequences is
+exactly $1$, for every $m\geq1$.
+\end{theorem}
+
+Here is the complete construction. Concatenation is written by juxtaposition,
+$w^j$ means $j$ copies of $w$, and $|w|$ denotes length. Fix $m,r,s\geq1$
+with $r\ne s$ and set
+\begin{equation}\label{eq:construction}
+ U=(mr,r),\qquad V=(ms,s),\qquad W_0=U,\qquad
+ W_{k+1}=W_k^{\,k+2}V^{\,k+1}W_k^{\,k+2}\quad(k\geq0).
+\end{equation}
+Each $W_k$ is a prefix of $W_{k+1}$. Their lengths $L_k=|W_k|$ satisfy
+\begin{equation}\label{eq:length}
+ L_0=2,\qquad L_{k+1}=2(k+2)L_k+2(k+1).
+\end{equation}
+Thus they are even and tend to infinity, and determine a unique infinite
+sequence $A=A^{(m;r,s)}$ having every $W_k$ as a prefix.
+
+\section{Proof of the construction}
+\begin{lemma}\label{lem:matrix}
+If $w$ is a nonempty positive word and
+\[
+ M(w)=\prod_{a\text{ in }w}\begin{pmatrix}a&1\\1&0\end{pmatrix}
+     =\begin{pmatrix}p&b\\c&d\end{pmatrix},
+\]
+where the factors are in the order of the digits, then
+$[w]=p/c$, $[\widetilde w]=p/b$, and $w$ is $m$-palindromic if and only if
+$b=mc$.
+\end{lemma}
+\begin{proof}
+The finite continued-fraction recurrence, or induction on length, gives
+$[w]=p/c$. Since each factor is symmetric, $M(\widetilde w)=M(w)^{\mathsf T}$,
+which gives the second equality. All three entries $p,b,c$ are positive:
+this holds for one factor and is preserved by appending a positive digit.
+Hence $p/c=mp/b$ is equivalent to $b=mc$.
+\end{proof}
+
+Put $C=\operatorname{diag}(1,m)$ and $T(X)=C^{-1}X^{\mathsf T}C$ for
+$2\times2$ rational matrices. Then
+\[
+ T\!\begin{pmatrix}p&b\\c&d\end{pmatrix}
+ =\begin{pmatrix}p&mc\\b/m&d\end{pmatrix},\qquad
+ T(XY)=T(Y)T(X).
+\]
+Thus $M(w)$ is fixed by $T$ exactly when $w$ is $m$-palindromic.
+The two-digit block $(mt,t)$, for $t\geq1$, has matrix
+\[
+ B(t)=\begin{pmatrix}mt^2+1&mt\\t&1\end{pmatrix},
+ \qquad T(B(t))=B(t).
+\]
+If $T(X)=X$ and $T(Y)=Y$, then $T(X^j)=X^j$ and
+$T(X^jY^\ell X^j)=X^jY^\ell X^j$ for nonnegative integers $j,\ell$.
+Starting with $M(U)=B(r)$ and $M(V)=B(s)$, induction in
+\eqref{eq:construction} proves that every $W_k$ and every positive power
+of $W_k$ is $m$-palindromic.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+We first rule out eventual periodicity. Suppose that $A$ has period
+$p\geq1$ from position $N$ onward, meaning $a_{n+p}=a_n$ for all $n\geq N$.
+It then also has period $2p$ on that tail. The central copy of $V^{k+1}$ in
+$W_{k+1}$ starts at the even position
+$s_k=(k+2)L_k$ and ends just before $t_k=s_k+2(k+1)$.
+The next digit, at $t_k$, is the first digit of $W_k$, namely $mr$.
+Choose $k$ with $s_k\geq N$ and $k+1\geq p$. The position $t_k-2p$
+lies inside $V^{k+1}$ at an even offset and therefore has digit $ms$.
+Periodicity would make it equal to the distinct digit $mr$ at $t_k$.
+
+For each $k\geq0$, the beginning $W_k^{k+2}$ of $W_{k+1}$ shows that
+\emph{every} length $jL_k$, $1\leq j\leq k+2$, qualifies in
+\eqref{eq:density}. In particular, put
+\[
+ a_k=(k+1)L_k,\qquad b_k=(k+2)L_k.
+\]
+These are qualifying lengths with $a_k<b_k$ and $a_k\to\infty$; thus the
+set of qualifying lengths is infinite. In its complete increasing enumeration
+let $n_{i_k}=a_k$. Since $b_k$ also qualifies, the very next length satisfies
+$n_{i_k+1}\leq b_k$. Consequently
+\[
+ 1\geq\frac{n_{i_k}}{n_{i_k+1}}
+ \geq\frac{a_k}{b_k}=\frac{k+1}{k+2}\longrightarrow1.
+\]
+Because $a_k\to\infty$, the indices $i_k$ tend to infinity. All consecutive
+ratios lie in $(0,1)$, so their upper limsup is $1$. This argument does not
+assume that our displayed lengths exhaust the qualifying prefixes: additional
+prefixes only improve the lower bound for the next consecutive ratio.
+Finally, every density in \eqref{eq:density} is at most $1$, proving sharpness.
+\end{proof}
+
+\begin{corollary}\label{cor:transcendence}
+For all parameters in Theorem~\ref{thm:main}, the continued fraction $[A]$ is transcendental
+and has bounded partial quotients.
+\end{corollary}
+\begin{proof}
+The digits belong to the stated finite set. An infinite positive continued
+fraction is irrational, and a quadratic irrational has an eventually periodic
+expansion. Theorem~\ref{thm:main} excludes the quadratic case; Freeman's
+Theorem~1.2 \cite{Freeman} then gives transcendence.
+\end{proof}
+
+\begin{corollary}\label{cor:repetition}
+For every real $w>1$ and $w'>0$, the sequence $A$ satisfies Freeman's Conditions
+$(*)_w$, $(*)_{\widehat w}$ and $(**)_{w,w'}$
+\cite[Definitions~6.1--6.3, p.~7]{Freeman}.
+\end{corollary}
+\begin{proof}
+These conditions require repeated prefixes with strictly increasing root
+lengths; $(*)_{\widehat w}$ additionally requires bounded successive
+root-length ratios. In $(**)_{w,w'}$, the nonempty initial words must have
+length at most $w'$ times the corresponding root lengths.
+Put $h=\lceil w\rceil\geq2$. Since $W_k^{k+2}$ is a prefix of $A$,
+the roots $W_k$ already give $(*)_w$ for all sufficiently large $k$.
+For $(**)_{w,w'}$, fix an integer $j\geq1$ with $1/j\leq w'$ and take
+initial word $W_k$ and root $W_k^j$ for $k+2\geq1+jh$.
+Their length ratio is $1/j$, the root lengths increase strictly, and
+$W_k^{1+jh}$ is a prefix of $A$.
+For $(*)_{\widehat w}$ take, in order, all roots
+$W_k^j$, $1\leq j\leq J_k=\lfloor(k+2)/h\rfloor$, for $k+2\geq2h$.
+Each root repeated $h$ times is a prefix. Within one stage the length
+ratio is at most $2$; between stages it is at most
+\[
+ \frac{L_{k+1}}{J_kL_k}
+ \leq\frac{3(k+2)}{J_k}\leq6h,
+\]
+using $L_k\geq2$ and $J_k\geq(k+2)/(2h)$.
+The last root in each stage is shorter than the first in the next, so
+the lengths are strictly increasing. Nonquadraticity follows from
+Corollary~\ref{cor:transcendence}.
+\end{proof}
+
+Freeman's Definition~6.3 requires nonempty initial words, so its literal
+$w'=0$ case is impossible. With the convention allowing empty initial
+words, the construction also gives $(**)_{w,0}$, using roots $W_k$.
+
+\section{The density convention and the full Fibonacci clause}
+The upper-limsup convention must be distinguished from the classical
+palindromic-prefix density. Fischler studies
+$\delta(A)=\limsup n_{i+1}/n_i$ for ordinary palindromic prefixes
+\cite[\S1]{Fischler}. The density in Adamczewski--Allouche
+\cite[\S5, Theorem~12]{AA} is its reciprocal:
+\[
+ d_{\mathrm{classical}}(A)=\delta(A)^{-1}
+    =\liminf_{i\to\infty}\frac{n_i}{n_{i+1}},
+ \qquad 1/(+\infty)=0.
+\]
+In general this is not the limsup in \eqref{eq:density}. Our examples also
+work for $m=1$, without contradicting Fischler's bound for the lower liminf.
+The replacement bound $1$ proved here concerns precisely Freeman's displayed
+upper-limsup definition; it is not a claim about a lower-liminf variant for
+$m>1$.
+
+The exact Fibonacci equality follows from a more general block-code identity.
+For any finite or infinite word $t$ of positive integers, let $E_m(t)$
+replace each letter $t_i$ by the block $(mt_i,t_i)$.
+
+\begin{lemma}\label{lem:block}
+An even-length prefix of $E_m(t)$ is $m$-palindromic precisely when its
+underlying letter prefix is a palindrome. If $m\geq2$, no odd-length prefix
+qualifies. If $m=1$, an odd-length prefix qualifies precisely when all its
+digits are equal.
+\end{lemma}
+\begin{proof}
+For $q\geq1$ the even prefix has matrix $B(t_1)\cdots B(t_q)$, so the
+fixed-point condition for $T$ is
+\[
+ B(t_1)\cdots B(t_q)=B(t_q)\cdots B(t_1).
+\]
+Equality implies that the two corresponding continued fractions are equal.
+Two positive finite continued fractions of the same length have identical
+digit words: the only ambiguity replaces a final pair $(a,1)$ by $(a+1)$
+and changes length by one, as follows by successive integer parts in the
+Euclidean algorithm. This includes terminal digit $1$.
+Thus the block word equals its reversal. The converse follows by reversing
+the factors in a palindromic block word.
+
+For $m\geq2$, each $B(t)$ is congruent modulo $m$ to
+$\left(\begin{smallmatrix}1&0\\t&1\end{smallmatrix}\right)$.
+Consequently the top-left entry of any product of whole blocks is $1$
+modulo $m$, including the empty product. Appending the first digit of the
+next block makes this entry the new top-right entry. It cannot equal
+$m$ times the bottom-left entry, which is $0$ modulo $m$.
+
+For $m=1$, the same-length uniqueness just used makes qualifying words
+ordinary palindromes. An odd-length prefix of a doubled word has equal
+digits in the adjacent pairs $(0,1),(2,3),\ldots$. Reflection in its
+midpoint gives equality in the intervening adjacent pairs as well.
+Every digit must therefore be equal. The converse is immediate.
+\end{proof}
+
+\begin{corollary}\label{cor:transport}
+Let $t$ be a nonconstant infinite word of positive integers with infinitely
+many palindromic prefixes, of positive lengths $p_0<p_1<\cdots$.
+For every $m\geq1$,
+\[
+ d_m([E_m(t)])=\limsup_i\frac{p_i}{p_{i+1}}.
+\]
+The analogous identity holds for the lower liminf.
+\end{corollary}
+\begin{proof}
+Lemma~\ref{lem:block} gives exactly the lengths $2p_i$, apart from finitely
+many odd lengths within the initial constant run when $m=1$.
+Finite insertions and multiplication of all remaining lengths by $2$
+leave both limiting ratios unchanged.
+\end{proof}
+
+Let $F=abaababa\cdots$ be the fixed point starting in $a$ of
+$a\mapsto ab$, $b\mapsto a$. Write $F(m,r,s)$ for its image under
+$a\mapsto(mr,r)$, $b\mapsto(ms,s)$.
+
+\begin{corollary}\label{cor:fibonacci}
+For all positive integers $m,r,s$ with $r\ne s$,
+\[
+ d_m([F(m,r,s)])=\varphi^{-1}.
+\]
+In fact all consecutive qualifying-prefix ratios tend to $\varphi^{-1}$.
+\end{corollary}
+\begin{proof}
+Relabeling $a,b$ by the distinct integers $r,s$ preserves palindromes.
+The complete list of positive palindromic-prefix lengths of $F$ is
+$1,3,6,11,19,\ldots$, namely $f_j-2$ for $j\geq4$, where
+$f_0=0$, $f_1=1$, and $f_{j+1}=f_j+f_{j-1}$
+\cite[\S1, p.~1; attributed there to de Luca (1997), Theorem~5]{Fischler}.
+Lemma~\ref{lem:block} makes the qualifying
+lengths exactly $2(f_j-2)$, together with the single initial length $1$
+when $m=1$. Their consecutive ratios tend to $\varphi^{-1}$.
+\end{proof}
+
+Freeman's already proved lower bound \cite[\S7, p.~9]{Freeman} is thus
+an equality. The new ingredient is the converse and the odd-prefix exclusion
+in Lemma~\ref{lem:block}; the ordinary Fibonacci-prefix formula is prior
+work of de Luca and Fischler. In particular, the classical
+Fibonacci value is not a new extremality theorem.
+
+\begin{corollary}\label{cor:later}
+The right-hand upper bound in Abdullah--Hamoud
+\cite[Lemma~4.3, equation~(7), pp.~7--8]{AH} is false for their displayed
+upper-limsup convention, even for non-eventually-periodic words on two
+positive integer letters. Its sharp universal replacement is $1$.
+\end{corollary}
+\begin{proof}
+Use $m=1$ and $(r,s)=(2,3)$ in Theorem~\ref{thm:main}.
+For $m=1$, same-length finite continued-fraction uniqueness identifies
+qualifying prefixes with ordinary palindromic prefixes, so their
+upper-limsup density is $1$. Every such ratio is at most $1$.
+\end{proof}
+Their introductory equation~(1) instead uses the classical reciprocal
+forward limsup; Corollary~\ref{cor:later} concerns precisely the different
+quantity displayed in Lemma~4.3, not their letter-frequency statistics.
+
+\section{Coverage of the source statements}
+All Freeman locators below refer to arXiv:1604.06755v2.
+\begin{center}\small
+\begin{tabular}{@{}p{0.40\linewidth}p{0.54\linewidth}@{}}\toprule
+Source statement & Coverage \\\midrule
+Conjecture~7.1, sentence 1, p.~10 & Refuted-and-corrected:
+the attained sharp bound is $1$ for every $m\geq1$
+(Theorem~\ref{thm:main}).\\[3pt]
+Conjecture~7.1, sentence 2, p.~10 & Proved for every stated parameter
+($m,r,s\geq1$, $r\ne s$), Corollary~\ref{cor:fibonacci}.\\[3pt]
+\S7 opening, p.~9: ordinary Fibonacci maximality & Refuted-and-corrected
+under the displayed upper-limsup convention by Theorem~\ref{thm:main}
+with $m=1$. Fischler's different, lower-liminf bound is unaffected.\\[3pt]
+\S7 Fibonacci lower bound, p.~9 & Reproved; prior proof Freeman (2017).
+Corollary~\ref{cor:fibonacci} strengthens it to equality.\\[3pt]
+de Luca--Fischler Fibonacci prefixes and classical density & Prior formula
+cited via Fischler (2006, \S1) and extended by Corollary~\ref{cor:transport}; the classical extremal
+bound is cited, not reproved.\\[3pt]
+Freeman Theorem~1.2, p.~1 & Prior criterion cited; it yields
+Corollary~\ref{cor:transcendence}.\\[3pt]
+Freeman Lemmas~3.6 and 3.9, p.~4 & Reproved; prior proof Freeman (2017).
+The weighted transpose gives the structural proof above.\\[3pt]
+Definitions~6.1--6.3, p.~7 & Not posed as assertions; all three repetition
+properties proved for $A$ in Corollary~\ref{cor:repetition}.\\[3pt]
+Examples~5.2, 6.4 and 6.5, pp.~7--9 & Prior constructions cited, not
+reproved. The no-repetition properties of Examples~6.4--6.5 are not covered
+by our highly repetitive construction.\\[3pt]
+Corollary~1.3 and \S8, pp.~1, 10 & Quadratic classification and conjugacy
+examples not covered.\\[3pt]
+Abdullah--Hamoud Lemma~4.3, pp.~7--8 & Right-hand upper-limsup bound
+refuted-and-corrected by Corollary~\ref{cor:later}; factor-deletion and
+letter-frequency claims not covered.\\\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Verification scope}
+The written proofs establish Theorem~\ref{thm:main} for all $m,r,s\geq1$
+with $r\ne s$, the block-code identity, the full Fibonacci equality and
+the stated corollaries. Transcendence uses Freeman's cited criterion;
+the Fibonacci equality uses the cited classical prefix formula.
+The accompanying exact-integer checker
+enumerates finite qualifying prefixes for the stated construction and compares
+the matrix test with rational continued-fraction evaluation on its specified
+finite range; these computations are illustrations, not premises for the
+infinite conclusions.
+
+The pinned Lean source
+\href{https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean}{\texttt{FreemanPalindromicDensityRefutation.lean}}
+contains the declaration
+\texttt{D5.S1.Depth.ContinuedFractions.}\allowbreak
+\texttt{FreemanPalindromicDensityRefutation.result}.
+Its proposition is the negation of the universal upper-bound assertion,
+with the upper-limsup density and all positive qualifying prefix lengths
+explicit in its definitions. Its proof uses the case $(m,r,s)=(2,2,3)$ of
+\eqref{eq:construction}. The parameterized theorem, the block-code and
+Fibonacci conclusions, and the transcendence and repetition corollaries
+have the written proofs above; they are not conclusions of that declaration.
+
+\begin{thebibliography}{9}
+\bibitem{Freeman} D.~M.~Freeman,
+\emph{Generalized palindromic continued fractions},
+Rocky Mountain Journal of Mathematics \textbf{48} (2018), no.~1, 219--236.
+\href{https://doi.org/10.1216/RMJ-2018-48-1-219}{doi:10.1216/RMJ-2018-48-1-219}.
+Posing text: \href{https://arxiv.org/abs/1604.06755v2}{arXiv:1604.06755v2},
+\S6, p.~8; Conjecture~7.1, p.~10.
+\bibitem{Fischler} S.~Fischler,
+\emph{Palindromic prefixes and episturmian words},
+Journal of Combinatorial Theory, Series A \textbf{113} (2006), no.~7,
+1281--1304.
+\href{https://doi.org/10.1016/j.jcta.2005.12.001}{doi:10.1016/j.jcta.2005.12.001}.
+\href{https://arxiv.org/abs/math/0501420v3}{arXiv:math/0501420v3}, \S1.
+\bibitem{AA} B.~Adamczewski and J.-P.~Allouche,
+\emph{Reversals and palindromes in continued fractions},
+Theoretical Computer Science \textbf{380} (2007), no.~3, 220--237,
+\S5, Theorem~12.
+\href{https://doi.org/10.1016/j.tcs.2007.03.017}{doi:10.1016/j.tcs.2007.03.017}.
+\bibitem{AH} D.~Abdullah and J.~Hamoud,
+\emph{On the asymptotic palindrome density of Fibonacci infinite words},
+\href{https://arxiv.org/abs/2511.06485v2}{arXiv:2511.06485v2}
+(18 January 2026), Lemma~4.3, pp.~7--8.
+\end{thebibliography}
+\medskip\noindent\footnotesize
+\textcopyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}

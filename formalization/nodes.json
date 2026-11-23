@@ -1,0 +1,316 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s1",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "For all integers $m,r,s\\geq1$ with $r\\ne s$, there is a positive,\nnon-eventually-periodic $m$-palindromic sequence $A^{(m;r,s)}$ with digits in\n$\\{mr,r,ms,s\\}$ such that\n\\[\n d_m([A^{(m;r,s)}])=1.\n\\]\nConsequently, the maximum upper-limsup density among such sequences is\nexactly $1$, for every $m\\geq1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s2",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s2",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "If $w$ is a nonempty positive word and\n\\[\n M(w)=\\prod_{a\\text{ in }w}\\begin{pmatrix}a&1\\\\1&0\\end{pmatrix}\n     =\\begin{pmatrix}p&b\\\\c&d\\end{pmatrix},\n\\]\nwhere the factors are in the order of the digits, then\n$[w]=p/c$, $[\\widetilde w]=p/b$, and $w$ is $m$-palindromic if and only if\n$b=mc$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s3",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "For all parameters in Theorem~\\ref{thm:main}, the continued fraction $[A]$ is transcendental\nand has bounded partial quotients.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s4",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "For every real $w>1$ and $w'>0$, the sequence $A$ satisfies Freeman's Conditions\n$(*)_w$, $(*)_{\\widehat w}$ and $(**)_{w,w'}$\n\\cite[Definitions~6.1--6.3, p.~7]{Freeman}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s5",
+      "kind": "paper",
+      "label": "Lemma",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s5",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "An even-length prefix of $E_m(t)$ is $m$-palindromic precisely when its\nunderlying letter prefix is a palindrome. If $m\\geq2$, no odd-length prefix\nqualifies. If $m=1$, an odd-length prefix qualifies precisely when all its\ndigits are equal.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s6",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "Let $t$ be a nonconstant infinite word of positive integers with infinitely\nmany palindromic prefixes, of positive lengths $p_0<p_1<\\cdots$.\nFor every $m\\geq1$,\n\\[\n d_m([E_m(t)])=\\limsup_i\\frac{p_i}{p_{i+1}}.\n\\]\nThe analogous identity holds for the lower liminf.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s7",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "For all positive integers $m,r,s$ with $r\\ne s$,\n\\[\n d_m([F(m,r,s)])=\\varphi^{-1}.\n\\]\nIn fact all consecutive qualifying-prefix ratios tend to $\\varphi^{-1}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:palindromic-density:3:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
+      },
+      "lineage": "collected:palindromic-density:s8",
+      "macros": {
+        "\\limsupop": "\\operatorname*{lim\\,sup}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "palindromic-density",
+      "scope": "in_scope",
+      "statement": "The right-hand upper bound in Abdullah--Hamoud\n\\cite[Lemma~4.3, equation~(7), pp.~7--8]{AH} is false for their displayed\nupper-limsup convention, even for non-eventually-periodic words on two\npositive integer letters. Its sharp universal replacement is $1$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+      "toolchain": null,
+      "version": 3,
+      "work": "palindromic-density"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "palindromic-density",
+  "revision": 3,
+  "problem_ids": ["palindromic-density"],
+  "topic": "Freeman's upper-limsup m-palindromic density and Fibonacci equality",
+  "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "For Freeman's Conjecture 7.1 (arXiv:1604.06755v2, 25 January 2017, p. 10; density in section 6, p. 8), we prove the sharp upper-limsup replacement bound 1 and extend the Fibonacci-prefix formula of de Luca, as recalled by Fischler (2006, section 1), to establish the separate Fibonacci equality for all positive integers m,r,s with r distinct from s. The density-one examples have bounded partial quotients and are not eventually periodic: increasing powers of whole prefixes force local length ratios to approach one. A block-code identity gives all qualifying Fibonacci prefixes, including the cases with a terminal digit 1 and with m=1. The upper-limsup density differs from the classical lower-liminf density.",
+  "summary": "The sharp upper-limsup bound is 1 for every positive m. The full Fibonacci equality is proved for every positive m,r,s with r distinct from s. The same construction corrects the upper-limsup bound in Abdullah–Hamoud, Lemma 4.3.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean",
+  "posing_source": "https://arxiv.org/abs/1604.06755v2",
+  "posing_locator": "Conjecture 7.1, p. 10; density definition in section 6, p. 8; Fibonacci lower bound in section 7, p. 9",
+  "coverage": {
+    "written_proofs": [
+      "Attained sharp upper-limsup density 1 for every positive m,r,s with r distinct from s",
+      "Block-code classification for all positive letters, including odd prefixes and terminal digit 1",
+      "Transport of both upper-limsup and lower-liminf prefix densities",
+      "Full Fibonacci equality for every positive m,r,s with r distinct from s, using the cited classical prefix formula",
+      "Transcendence using Freeman's Theorem 1.2",
+      "Conditions (*)_w and (*)_hat(w) for every w>1, and (**)_(w,w') for every w>1 and w'>0 with nonempty initial words; the endpoint w'=0 holds under the empty-initial-word convention",
+      "Counterexample and sharp replacement for Abdullah–Hamoud Lemma 4.3's right-hand upper-limsup bound"
+    ],
+    "lean_declaration": "D5.S1.Depth.ContinuedFractions.FreemanPalindromicDensityRefutation.result",
+    "lean_statement": "Negation of the universal upper-limsup bound using the (m,r,s)=(2,2,3) witness",
+    "finite_checks": "Exact prefix enumeration, block-code classification, rational comparisons and root-growth comparisons; ranges and totals in README.md and checker-output.json",
+    "prior_results": [
+      "Classical Fibonacci-prefix formula attributed to de Luca (1997, Theorem 5) by Fischler (2006, section 1)",
+      "Fischler's classical extremal bound for the reciprocal forward limsup",
+      "Freeman's Fibonacci lower bound and transcendence criterion"
+    ],
+    "not_covered": [
+      "A maximal lower-liminf bound for m greater than 1",
+      "Freeman's nonstammering examples and quadratic conjugacy classification",
+      "Abdullah–Hamoud's factor-deletion and letter-frequency assertions"
+    ]
+  },
+  "related_source": "https://arxiv.org/abs/2511.06485v2",
+  "related_locator": "Lemma 4.3, equation (7), pp. 7–8; introductory equation (1) uses a different density convention"
+}

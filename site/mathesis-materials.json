@@ -1,0 +1,11 @@
+{
+  "schema": "mathesis.materials.v1",
+  "work": "palindromic-density",
+  "version": 3,
+  "repository_url": "https://github.com/mathesis-papers/palindromic-density",
+  "site_url": "https://papers.trureturing.org/palindromic-density/",
+  "doi": null,
+  "reading": {},
+  "slides": [],
+  "visualizations": []
+}
