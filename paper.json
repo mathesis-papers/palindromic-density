@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24414722",
     "current_version": 3,
     "doi": "10.5281/zenodo.24414723",
+    "kind": "note",
     "lean_source": {
       "revision": "aec68a61276de81e1e122880cd5921bac6e8f070",
       "url": "https://github.com/the-omega-institute/trureturing/blob/aec68a61276de81e1e122880cd5921bac6e8f070/D5/S1/Depth/ContinuedFractions/FreemanPalindromicDensityRefutation.lean"
@@ -55,10 +56,12 @@
     "title": "Sharp upper-limsup density in Freeman's conjecture and an extension of the de Luca–Fischler Fibonacci formula",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-23T16:50:44.045633597Z",
         "revision": "3",
-        "version": 3
+        "version": 3,
+        "version_label": null
       }
     ],
     "work": "palindromic-density"
